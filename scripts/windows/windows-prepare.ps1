@@ -69,3 +69,7 @@ Write-Output "Enabling Remote Desktop..."
 Set-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server" -Name "fDenyTSConnections" -Value 0 | Out-Null
 Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp' -name "UserAuthentication" -Value 0
 Enable-NetFirewallRule -Group '@FirewallAPI.dll,-28752'
+
+# Disable Windows Admin Center Pop-up in Server Manager
+Write-Host 'Disable Windows Admin Center Pop-up in Server Manager'
+New-ItemProperty -Path 'HKLM:\SOFTWARE\Microsoft\ServerManager' -Name 'DoNotPopWACConsoleAtSMLaunch' -Value 1 -PropertyType DWord | Out-Null

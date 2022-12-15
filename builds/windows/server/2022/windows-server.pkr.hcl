@@ -130,7 +130,7 @@ source "vsphere-iso" "windows-server-standard-core" {
   winrm_port     = var.communicator_port
   winrm_timeout  = var.communicator_timeout
   winrm_insecure = true
-  winrm_use_ssl = true
+  winrm_use_ssl  = true
   winrm_use_ntlm = true
 
   // Template and Content Library Settings
@@ -237,7 +237,7 @@ source "vsphere-iso" "windows-server-standard-dexp" {
   winrm_port     = var.communicator_port
   winrm_timeout  = var.communicator_timeout
   winrm_insecure = true
-  winrm_use_ssl = true
+  winrm_use_ssl  = true
   winrm_use_ntlm = true
 
   // Template and Content Library Settings
@@ -346,7 +346,7 @@ source "vsphere-iso" "windows-server-datacenter-core" {
   winrm_port     = var.communicator_port
   winrm_timeout  = var.communicator_timeout
   winrm_insecure = true
-  winrm_use_ssl = true
+  winrm_use_ssl  = true
   winrm_use_ntlm = true
 
   // Template and Content Library Settings

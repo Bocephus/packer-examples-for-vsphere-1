@@ -45,8 +45,8 @@ Wrap {
 
 # add HTTPS listeners
 Wrap {
-    $cert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName 'packer'
-    New-Item -Path WSMan:\LocalHost\Listener -Transport HTTPS -Address * -CertificateThumbPrint $cert.Thumbprint -Hostname 'packer' -Port 5986 -Force | Out-Null
+    $cert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName $env:COMPUTERNAME
+    New-Item -Path WSMan:\LocalHost\Listener -Transport HTTPS -Address * -CertificateThumbPrint $cert.Thumbprint -Hostname $env:COMPUTERNAME -Port 5986 -Force | Out-Null
 }
 
 # tune winrm
