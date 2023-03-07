@@ -7,10 +7,10 @@
 //  The Packer configuration.
 
 packer {
-  required_version = ">= 1.8.5"
+  required_version = ">= 1.8.6"
   required_plugins {
     git = {
-      version = ">= 0.3.2"
+      version = ">= 0.3.3"
       source  = "github.com/ethanmdavidson/git"
     }
     vsphere = {
@@ -98,7 +98,6 @@ source "vsphere-iso" "linux-ubuntu" {
   notes                = local.build_description
 
   // Removable Media Settings
-  iso_url      = var.iso_url
   iso_paths    = local.iso_paths
   iso_checksum = local.iso_checksum
   http_content = var.common_data_source == "http" ? local.data_source_content : null

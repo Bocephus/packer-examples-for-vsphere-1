@@ -7,10 +7,10 @@
 //  The Packer configuration.
 
 packer {
-  required_version = ">= 1.8.5"
+  required_version = ">= 1.8.6"
   required_plugins {
     git = {
-      version = ">= 0.3.2"
+      version = ">= 0.3.3"
       source  = "github.com/ethanmdavidson/git"
     }
     vsphere = {
@@ -93,7 +93,6 @@ source "vsphere-iso" "windows-server-standard-core" {
   notes                = local.build_description
 
   // Removable Media Settings
-  iso_url      = var.iso_url
   iso_paths    = local.iso_paths
   iso_checksum = local.iso_checksum
   cd_files = [
@@ -197,7 +196,6 @@ source "vsphere-iso" "windows-server-standard-dexp" {
   notes                = local.build_description
 
   // Removable Media Settings
-  iso_url      = var.iso_url
   iso_paths    = local.iso_paths
   iso_checksum = local.iso_checksum
   cd_files = [
@@ -301,7 +299,6 @@ source "vsphere-iso" "windows-server-datacenter-core" {
   notes                = local.build_description
 
   // Removable Media Settings
-  iso_url      = var.iso_url
   iso_paths    = local.iso_paths
   iso_checksum = local.iso_checksum
   cd_files = [
@@ -362,7 +359,7 @@ source "vsphere-iso" "windows-server-datacenter-core" {
       options = [
         "extraconfig"
       ]
-      output_directory = "${local.ovf_export_path}/${local.vm_inst_os_image_datacenter_core}"
+      output_directory = "${local.ovf_export_path}/${local.vm_name_datacenter_core}"
     }
   }
 }
@@ -407,7 +404,6 @@ source "vsphere-iso" "windows-server-datacenter-dexp" {
   notes                = local.build_description
 
   // Removable Media Settings
-  iso_url      = var.iso_url
   iso_paths    = local.iso_paths
   iso_checksum = local.iso_checksum
   cd_files = [

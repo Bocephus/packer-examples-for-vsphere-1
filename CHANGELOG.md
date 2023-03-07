@@ -4,6 +4,17 @@
 
 > Release Date: Unreleased
 
+:sweat_drops: **Chore**:
+- Updates `required_versions` for `packer` to `>= 1.8.6`. [GH-486](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/486)
+- Updates `required_plugins` for `ethanmdavidson/packer-plugin-git` to `>= 0.3.3`. [GH-487](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/487)
+- Updates `required_versions` for `hashicorp/vsphere` to `>= 2.3.1`. [GH-488](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/488)
+- Updates `required_versions` for `terraform` to `>= 1.3.9`. [GH-489](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/489)
+- Updates Ubuntu 22.04 to 22.04.2 release. [GH-492](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/492)
+
+## [v23.01](https://github.com/vmware-samples/packer-examples-for-vsphere/releases/tag/v23.01)
+
+> Release Date: 2023-01-17
+
 :boom: **Enhancement**:
 
 - Adds support for disabling password expiration for the local administrator account on localized (non-English) Windows guest operating systems. [GH-334](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/334).
@@ -14,15 +25,18 @@
 
 - Fixes missing privileges for the custom role in vSphere that effected the ability to build using disk-based deployment modes and Windows 11 22H2 with vTPM. [GH-295](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/295), [GH-339](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/339), [GH-340](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/340)
 - Updates the URI in `user-data.pkrtpl.hcl` for Ubuntu 20.04 and 22.04 to remove the country code. This will help to ensure that GeoIP lookup works for all users. [GH-421](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/421)
+- Updates the install commands for Red Hat Enterprise Linux 9 to use the correct EPEL repository version. [GH-440](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/440)
 
 :page_facing_up: **Documenation**:
 
 - Updates options to download a release or clone the project. [GH-385](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/385)
 - Updates syntax to append RSA algorithm to `HostKeyAlgorithms +ssh-rsa` and`PubKeyAcceptedAlgorithms +ssh-rsa`. [GH-386](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/386)
+- Updates the ssh-keygen example for generating the ECDSA public key to use a 521 bit key length. Valid key lengths are 256, 384, or 521. [GH-439](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/439)
 
 :wrench: **Refactor**:
 
 - Refactors builds to use the current Git branch / tag as the `build_version` local variable used for virtual machine image names and descriptions. [GH-385](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/385)
+- Refactors Ansible roles to remove the `warn: false` args for ansible-core 2.14 compatibility. [GH-443](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/443)
 
 :sweat_drops: **Chore**:
 
@@ -32,18 +46,23 @@
 - Updates Rocky Linux 8 to 8.7 release. [GH-368](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/368)
 - Updates Almalinux 9 to 9.1 release. [GH-362](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/362)
 - Updates Almalinux 8 to 8.7 release. [GH-361](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/361)
-- Updates CentOS Stream 9 to December 2022 release. [GH-418](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/418)
-- Updates CentOS Stream 8 to November 2022 release. [GH-417](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/417)
-- Updates Windows Server 2022 to November 2022 (US English) release. [GH-376](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/376)
+- Updates CentOS Stream 9 to latest December 2022 release. [GH-454](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/454)
+- Updates CentOS Stream 8 to latest December 2022 release. [GH-453](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/453)
+- Updates Debian 11 to 11.6 release. [GH-432](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/432)
+- Updates Windows Server 2022 to December 2022 (US English) release. [GH-452](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/452)
 - Updates Windows Server 2019 to November 2022 (US English) release. [GH-373](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/373)
-- Updates Windows 11 22H2 to November 2022 (US English) release. [GH-419](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/419)
-- Updates Windows 10 22H2 to November 2022 (US English) release. [GH-374](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/374)
+- Updates Windows 11 22H2 to December 2022 (US English) release. [GH-451](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/451)
+- Updates Windows 10 22H2 to December 2022 (US English) release. [GH-450](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/450)
 - Updates `required_versions` for `packer` to `>= 1.8.5`. [GH-423](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/423)
 - Updates `required_plugins` for `packer-plugin-vsphere` to `>= 1.1.1`. [GH-416](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/416)
-- Updates `required_versions` for `terraform` to `>= 1.3.6`. [GH-391](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/391)
+- Updates `required_versions` for `terraform` to `>= 1.3.7`. [GH-456](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/456)
 - Updates `required_versions` for `hashicorp/hcp` to `>= 0.51.0`. [GH-408](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/408), [GH-409](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/396), [GH-410](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/410), [GH-411](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/411), [GH-412](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/412), [GH-413](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/413), [GH-414](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/414), [GH-415](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/415)
 - Updates Gomplate to `3.11.3`. [GH-380](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/380), [GH-382](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/382)
 - Removes Ubuntu 20.04 LTS (`x86_64`) and macOS Big Sur (Intel) as tested operating systems for the Packer host. [GH-393](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/393)
+
+:warning: **Breaking Change**:
+
+- Removes support to use the `iso_url` variable to download the guest operating system `.iso` from a URL introduced in [GH-249](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/249) due to [GH-343](https://github.com/vmware-samples/packer-examples-for-vsphere/issues/343). [GH-435](https://github.com/vmware-samples/packer-examples-for-vsphere/pull/435)
 
 ## [v22.09](https://github.com/vmware-samples/packer-examples-for-vsphere/releases/tag/v22.09)
 
